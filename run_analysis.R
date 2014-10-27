@@ -22,12 +22,13 @@ unlink(temp)
 samsungpath = "./samsung"
 setwd(samsungpath)
 
-# Read in the feature names and the features of the two data sets (test
-# and training). Label the two feature sets using the feature names.
+# Read in the feature names and the features of the two data sets
+# (test and training)
 feature_names = read.table("./UCI HAR Dataset/features.txt")[, 2]
 features_test = read.table("./UCI HAR Dataset/test/X_test.txt")
-colnames(features_test) = feature_names
 features_train = read.table("./UCI HAR Dataset/train/X_train.txt")
+# Label the two feature sets using the feature names
+colnames(features_test) = feature_names
 colnames(features_train) = feature_names
 
 # Read in and label the two subject data sets
